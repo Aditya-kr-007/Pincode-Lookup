@@ -19,9 +19,9 @@ app.add_exception_handler(PinCodeNotFoundException, pin_code_not_found_exception
 app.add_exception_handler(InvalidPinCodeException, invalid_pin_code_exception_handler)
 
 
-@app.get("/")
-def root():
-    return {"message": "Pincode lookup api"}
+@app.get("/pincode")
+def get_all_pincodes():
+    return pincode_db
 
 
 @app.get("/pincode/{code}", response_model=LocationResponse)
