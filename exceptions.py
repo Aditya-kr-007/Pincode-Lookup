@@ -11,7 +11,7 @@ class InvalidPinCodeException(Exception):   #exception class for handling cases 
         self.reason = reason    # feeding the reason for the exception
 
 #custom exception handler for PinCodeNotFoundException
-async def pin_code_not_found_exception_handler(request: Request, exc: PinCodeNotFoundException):
+async def pin_code_not_found_exception_handler(request: Request, exc: PinCodeNotFoundException): #exc is the exception instance that was raised from the endpoint
     return JSONResponse(
         status_code=404,
         content={
